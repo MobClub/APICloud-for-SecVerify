@@ -1,0 +1,43 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mob.sdk.moduledemo">
+
+    <application android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+
+
+        <provider
+            android:name="com.mob.MobProvider"
+            android:exported="false"
+            android:multiprocess="true"
+            android:authorities="${applicationId}.com.mob.MobProvider"
+            >
+        </provider>
+
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="com.mob.secverify.login.impl.cucc.CuccOAuthProxyActivity"
+            android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" />
+        <activity-alias
+            android:name="com.sdk.mobile.manager.login.cucc.OauthActivity"
+            android:targetActivity="com.mob.secverify.login.impl.cucc.CuccOAuthProxyActivity" />
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="com.mob.secverify.login.impl.cmcc.CmccOAuthProxyActivity"
+            android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" />
+        <activity-alias
+            android:name="com.cmic.sso.sdk.activity.LoginAuthActivity"
+            android:targetActivity="com.mob.secverify.login.impl.cmcc.CmccOAuthProxyActivity" />
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="cn.com.chinatelecom.account.sdk.ui.AuthActivity"
+            android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" />
+
+    </application>
+
+</manifest>

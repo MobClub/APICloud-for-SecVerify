@@ -1,0 +1,6 @@
+framework module EAccountOpenPageSDK {
+  umbrella header "EAccountOpenPageSDK.h"
+
+  export *
+  module * { export * }
+}

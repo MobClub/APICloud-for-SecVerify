@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+
+    //useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        applicationId project.ANDROID_BUILD_APP_PKG
+        minSdkVersion Integer.parseInt(project.ANDROID_BUILD_MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
+        versionCode Integer.parseInt(project.ANDROID_BUILD_VERSION_CODE)
+        versionName project.ANDROID_BUILD_VERSION_NAME
+	    multiDexEnabled true
+    }
+    signingConfigs {
+        release {
+            storeFile file("../private.keystore")
+            storePassword "mob123"
+            keyAlias "private.keystore"
+            keyPassword "mob123"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            debuggable true
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+    lintOptions {
+        abortOnError false
+		checkReleaseBuilds false
+    }
+
+    aaptOptions {
+        cruncherEnabled false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets{
+        main{
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+}
+
+repositories{
+    flatDir{
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    api project(':SecVerifyPlus')
+
+    api fileTree(dir: '../SecVerifyPlus/libs', include: ['*.aar','*.jar'])
+
+}
