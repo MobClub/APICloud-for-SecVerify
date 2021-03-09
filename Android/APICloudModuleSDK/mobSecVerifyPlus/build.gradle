@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    task copyAar(type: Copy) {
+        delete '../packageHelper/mobSecVerifyPlus/'
+        from 'build/outputs/aar/'
+        into '../packageHelper/mobSecVerifyPlus/'
+        include "mobSecVerifyPlus-release.aar"
+        rename('mobSecVerifyPlus-release.aar', 'mobSecVerifyPlus.aar')
+
+        from '../packageHelper/'
+        into '../packageHelper/mobSecVerifyPlus/'
+        include "module.json"
+
+        from 'libs/'
+        into '../packageHelper/mobSecVerifyPlus/'
+        include "*.aar"
+    }
+
+    task zipAar(type: Zip,dependsOn:copyAar) {
+        delete '../packageHelper/mobSecVerifyPlus.zip'
+        from '../packageHelper/'
+        include '**/mobSecVerifyPlus/**'
+        destinationDir file('../packageHelper/')
+        baseName 'mobSecVerifyPlus'
+        doLast {
+            delete '../packageHelper/mobSecVerifyPlus/'
+        }
+    }
+
+    tasks.whenTaskAdded { task ->
+        if (task.name == 'assembleRelease') {
+            task.dependsOn zipAar
+        }
+    }
+}
+
+dependencies {
+    compileOnly files('libs/MobCommons-2020.0730.1133.jar')
+    compileOnly files('libs/MobGUI-2019.0306.1850.jar')
+    compileOnly files('libs/MobTools-2020.0730.1131.jar')
+    compileOnly files('../app/libs/apiEngine v1.1.0.jar')
+
+
+    compileOnly fileTree(dir: 'libs', include: ['*.aar'])
+
+}

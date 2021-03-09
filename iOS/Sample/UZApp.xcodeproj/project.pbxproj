@@ -92,8 +92,8 @@
 		8545C00225F0CB0100EBFC1C /* TYRZUISDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8545BFF825F0CB0100EBFC1C /* TYRZUISDK.framework */; };
 		8545C00325F0CB0100EBFC1C /* OAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8545BFFA25F0CB0100EBFC1C /* OAuth.framework */; };
 		8545C00425F0CB0100EBFC1C /* SecVerify.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8545BFFB25F0CB0100EBFC1C /* SecVerify.bundle */; };
+		85F540E225F7244C00FDA505 /* libmobSecVerifyPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F540E125F7244C00FDA505 /* libmobSecVerifyPlus.a */; };
 		BD730105259B1763004A9E67 /* widget in Resources */ = {isa = PBXBuildFile; fileRef = BD730104259B1763004A9E67 /* widget */; };
-		BD73014A259B2A38004A9E67 /* libSecVerifyPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD730149259B2A38004A9E67 /* libSecVerifyPlus.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -236,8 +236,8 @@
 		8545BFF825F0CB0100EBFC1C /* TYRZUISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYRZUISDK.framework; sourceTree = "<group>"; };
 		8545BFFA25F0CB0100EBFC1C /* OAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OAuth.framework; sourceTree = "<group>"; };
 		8545BFFB25F0CB0100EBFC1C /* SecVerify.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SecVerify.bundle; sourceTree = "<group>"; };
+		85F540E125F7244C00FDA505 /* libmobSecVerifyPlus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmobSecVerifyPlus.a; sourceTree = "<group>"; };
 		BD730104259B1763004A9E67 /* widget */ = {isa = PBXFileReference; lastKnownFileType = folder; name = widget; path = ../../../widget; sourceTree = "<group>"; };
-		BD730149259B2A38004A9E67 /* libSecVerifyPlus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSecVerifyPlus.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +263,7 @@
 				52BA310219F6368400D81640 /* QuartzCore.framework in Frameworks */,
 				52BA310319F6368400D81640 /* SafariServices.framework in Frameworks */,
 				52BA310419F6368400D81640 /* SceneKit.framework in Frameworks */,
+				85F540E225F7244C00FDA505 /* libmobSecVerifyPlus.a in Frameworks */,
 				52BA310519F6368400D81640 /* Social.framework in Frameworks */,
 				52BA310619F6368400D81640 /* SpriteKit.framework in Frameworks */,
 				529FCFD21C004DFE00AFDBAF /* libUZEngine.a in Frameworks */,
@@ -275,7 +276,6 @@
 				52BA30D619F6368400D81640 /* MobileCoreServices.framework in Frameworks */,
 				52BA30D719F6368400D81640 /* QuickLook.framework in Frameworks */,
 				8545C00225F0CB0100EBFC1C /* TYRZUISDK.framework in Frameworks */,
-				BD73014A259B2A38004A9E67 /* libSecVerifyPlus.a in Frameworks */,
 				5204B61221549CD900306B1E /* libopencore-amrwb.a in Frameworks */,
 				52BA30D819F6368400D81640 /* Security.framework in Frameworks */,
 				52BA30D919F6368400D81640 /* SystemConfiguration.framework in Frameworks */,
@@ -548,6 +548,14 @@
 			path = Union;
 			sourceTree = "<group>";
 		};
+		85F540E025F7244C00FDA505 /* mobSecVerifyPlus */ = {
+			isa = PBXGroup;
+			children = (
+				85F540E125F7244C00FDA505 /* libmobSecVerifyPlus.a */,
+			);
+			path = mobSecVerifyPlus;
+			sourceTree = "<group>";
+		};
 		BD730107259B182A004A9E67 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,18 +569,10 @@
 		BD730147259B2A38004A9E67 /* UZModules */ = {
 			isa = PBXGroup;
 			children = (
-				BD730148259B2A38004A9E67 /* SecVerifyPlus */,
+				85F540E025F7244C00FDA505 /* mobSecVerifyPlus */,
 			);
 			name = UZModules;
 			path = ../UZModules;
-			sourceTree = "<group>";
-		};
-		BD730148259B2A38004A9E67 /* SecVerifyPlus */ = {
-			isa = PBXGroup;
-			children = (
-				BD730149259B2A38004A9E67 /* libSecVerifyPlus.a */,
-			);
-			path = SecVerifyPlus;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -6,7 +6,7 @@
     <author email="pangjj@mob.com" href="https://www.mob.com">
         JunJiePange
     </author>
-    <feature name="SecVerifyPlus">
+    <feature name="mobSecVerifyPlus">
         <param name="SecVerifyAppKey" value="2c574691c6986" />
         <param name="SecVerifyAppSecret" value="4b5cd595eb07b5cf17bb269f7a51391d" />
         <!-- 可选配置,默认 0,支持所有运营商。-->

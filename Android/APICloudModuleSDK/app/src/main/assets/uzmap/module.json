@@ -1,7 +1,7 @@
 {
 	"modules":[
 		{
-			"name":"SecVerifyPlus",
+			"name":"mobSecVerifyPlus",
 			"class":"com.mob.SecVerifyPlus.APIModuleDemo"
 		}
 	]

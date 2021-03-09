@@ -4,9 +4,9 @@
 
 秒验是一款帮助开发者实现一键验证功能的产品，从根源上降低企业验证成本， 有效提高拉新转化率，降低因验证带来的流失率，3秒完成手机号验证。
 
-### SecVerifyPlus 模块概述
+### mobSecVerifyPlus 模块概述
 
-SecVerifyPlus封装了SecVerify,是对APICloud平台的支持，为APICloud开发的App提供一键验证功能的一个组件，支持国内三网平台，帮助开发者轻松实现一键验证功能。
+mobSecVerifyPlus封装了SecVerify,是对APICloud平台的支持，为APICloud开发的App提供一键验证功能的一个组件，支持国内三网平台，帮助开发者轻松实现一键验证功能。
 
 如有问题请联系技术支持:  
 
@@ -31,7 +31,7 @@ Android:   185-1664-1950
     ......
     <meta-data name="Mob-AppKey" value="moba6b6c6d6" />
     <meta-data name="Mob-AppSecret" value="b89d2427a3bc7ad1aea1e1e8c1d36bf3" />
-    <feature name="SecVerifyPlus">
+    <feature name="mobSecVerifyPlus">
         <param name="SecVerifyAppKey" value="3276d3e413040" />
         <param name="SecVerifyAppSecret" value="4280a3a6df667cfce37528dec03fd9c3" />
         <!-- 可选配置,默认 0,支持所有运营商。-->
@@ -57,7 +57,7 @@ import api from './script/api.js'
  */
 function uploadPrivacyStatus(status) {
     var params = {'status': status};
-    var svModule  = api.require('SecVerifyPlus');
+    var svModule  = api.require('mobSecVerifyPlus');
     svModule.submitPrivacyGrantResult(params, function (ret, err) {
         var jsonStr = JSON.stringify(ret);
         if (ret != null && ret['resultCode'] == 0) {
@@ -659,7 +659,7 @@ function addCustomEventListener() {
 ### **引入模块**
 
 ```js
-var secVerifyApi = api.require('SecVerifyPlus');
+var secVerifyApi = api.require('mobSecVerifyPlus');
 ```
 
 安卓端还需额外引入：

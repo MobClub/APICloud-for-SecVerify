@@ -6,12 +6,9 @@
     <author email="pangjj@mob.com" href="https://www.mob.com">
         JunJiePange
     </author>
-    <feature name="SecVerifyPlus">
-        <param name="SecVerifyAppKey" value="3276d3e413040" />
-        <param name="SecVerifyAppSecret" value="4280a3a6df667cfce37528dec03fd9c3" />
-        <!-- 可选配置,默认 0,支持所有运营商。-->
-        <!-- 0:移动 + 联通 + 电信，1:移动，2:联通，3:移动 + 联通，4:电信，5:移动 + 电信，6:联通 + 电信-->
-        <param name="SecVerifyOperator" value="0" />
+    <feature name="mobSecVerifyPlus">
+        <param name="mobSecVerifyAppKey" value="3276d3e413040" />
+        <param name="mobSecVerifyAppSecret" value="4280a3a6df667cfce37528dec03fd9c3" />
     </feature>
     
     <content src="index.html" />

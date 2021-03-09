@@ -369,6 +369,13 @@ function loginAuth(isManual) {
                 loginAuthTokenInfo = ret['ret'];
                 console.log(JSON.stringify(loginAuthTokenInfo));
                 api.alert({title: '登录验证成功', msg: JSON.stringify(loginAuthTokenInfo)});
+
+                if (systemType == 'ios' && isManualDismiss) {
+                    dismissLoading();
+                    dismissLoginVC(function(){
+                        console.log('ManualDismiss Login VC Success!');
+                    });
+                }
             }
         } else {
             api.alert({title: '登录验证失败', msg: jsonStr});

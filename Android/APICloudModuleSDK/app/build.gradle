@@ -67,8 +67,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    api project(':SecVerifyPlus')
+    api project(':mobSecVerifyPlus')
 
-    api fileTree(dir: '../SecVerifyPlus/libs', include: ['*.aar','*.jar'])
+    api fileTree(dir: '../mobSecVerifyPlus/libs', include: ['*.aar','*.jar'])
 
 }
