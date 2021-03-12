@@ -32,13 +32,9 @@ Android:   185-1664-1950
     <meta-data name="Mob-AppKey" value="moba6b6c6d6" />
     <meta-data name="Mob-AppSecret" value="b89d2427a3bc7ad1aea1e1e8c1d36bf3" />
     <feature name="mobSecVerifyPlus">
-        <param name="SecVerifyAppKey" value="3276d3e413040" />
-        <param name="SecVerifyAppSecret" value="4280a3a6df667cfce37528dec03fd9c3" />
-        <!-- 可选配置,默认 0,支持所有运营商。-->
-        <!-- 0:移动 + 联通 + 电信，1:移动，2:联通，3:移动 + 联通，4:电信，5:移动 + 电信，6:联通 + 电信-->
-        <param name="SecVerifyOperator" value="0" />
+        <param name="mobSecVerifyAppKey" value="3276d3e413040" />
+        <param name="mobSecVerifyAppSecret" value="4280a3a6df667cfce37528dec03fd9c3" />
     </feature>
-    
     .....
 </widget>
 ```

@@ -7,9 +7,9 @@
    可以在config.xml文件中配置：
 
    ```
-       <feature name="SecVerifyPlus">
-           <param name="SecVerifyAppKey" value="" />
-           <param name="SecVerifyAppSecret" value="" />
+       <feature name="mobSecVerifyPlus">
+           <param name="mobSecVerifyAppKey" value="" />
+           <param name="mobSecVerifyAppSecret" value="" />
        </feature>
    ```
 
